@@ -1,0 +1,94 @@
+{
+  "host": "http://photoeye.invoicebus.co",
+
+  "db": {
+    "host": "ewhserver552.edgewebhosting.net",
+    "port": "2533",
+    "username": "Dimitar",
+    "password": "1#Apple!Orcharda1",
+    "database":  {
+      "photoeye": "photoeyedev",
+      "photoeye_prod": "photoeye",
+      "artphotoindex": "artphotoindex"
+    }
+  },
+
+  "aws": {
+    "accessKeyId": "1DT0B061XKHQ9CAT4X02",
+    "secretAccessKey": "XRbFy0dpw4W+s9ioaEoJnS5DrOYbCvvV3Y5E8czV",
+    "tag": "photoeyecom-20",
+    "region": "us-west-1",
+    "s3": {
+      "bucket": "images.photoeye.com",
+      "endpoint": "https://s3.amazonaws.com"
+    }
+  },
+
+  "email": {
+    "info": "dimitar+info@invoicebus.com",
+    "webmaster": "dimitar+webmaster@invoicebus.com",
+    "order": "dimitar+order@invoicebus.com",
+    "gallery": "dimitar+gallery@invoicebus.com"
+  },
+
+  "mail": {
+    "host":     "smtp.mailgun.org",
+    "port":     587,
+    "tls":      true,
+    "username": "dimitar@sandboxddc7f55137c74d49a024ba2a94c1b107.mailgun.org",
+    "password": "photoeye@123"
+  },
+
+  "winston": {
+    "file": "./logs/errors.log",
+    "mail": {
+      "from":     "webmaster@photoeye.com",
+      "to":       "dimitar@invoicebus.com"
+    }
+  },
+
+  "shipping": {
+    "usps": {
+      "username": "892PHOTO0443",
+      "password": "399BU56CU697"
+    },
+    "ups": {
+      "username": "rixonreed",
+      "password": "photoeye99",
+      "access_key": "2BABB6A7A7D14228"
+    },
+    "fedex": {
+      "key": "jj3NAmlB5T60K8gk",
+      "password": "UirLg5O3vA6wTexrcGnmnOlCk",
+      "account_number": "118896416",
+      "meter_number": "108942666"
+    }
+  },
+
+  "auth" : {
+    "facebook" : {
+      "appID"           : "179662095733956",
+      "appSecret"       : "d4d7b3c0472b406b6444cc7774e53803",
+      "callbackURL"     : "http://photoeye.invoicebus.co/account/facebook/callback"
+    },
+
+    "twitter" : {
+      "consumerKey"     : "2GvrR9XczFbP4oCgX8TuLoltp",
+      "consumerSecret"  : "XIrVOT6uYAzZjiccQ7YrwQaJlRa96ykdGW4QPAbQe2dG8gUmsv",
+      "callbackURL"     : "http://photoeye.invoicebus.co/account/twitter/callback"
+    },
+
+    "instagram" : {
+      "clientID"        : "a05528a5a5064b52a9a424214d2d65f5",
+      "clientSecret"    : "1577a7de93394b9f8327366bc9e30fba",
+      "callbackURL"     : "http://photoeye.invoicebus.co/account/instagram/callback"
+    }
+  },
+
+  "payment": {
+    "sandbox":         true,
+    "api_login_id":    "39KZdnZ6W",
+    "transaction_key": "53f9QBsJ72k8jT59",
+    "secret_key":      "Simon"
+  }
+}

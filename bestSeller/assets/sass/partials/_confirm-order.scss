@@ -1,0 +1,80 @@
+/* Confirm Order Styles */
+
+.confirm-order {
+  .order-number {
+    margin-bottom: 10px;
+  }
+
+  .alert {
+    letter-spacing: 0;
+  }
+
+  p, label {
+    letter-spacing: 0;
+  }
+
+  h2 {
+    .change {
+      font-size: 11px;
+    }
+
+    small {
+      font-weight: normal;
+      font-size: 10px;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .order-bottom {
+    .btn {
+      margin-bottom: 10px;
+
+      @media (max-width: 520px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .credit-card {
+    select {
+      width: 48.7% !important;
+    }
+
+    .card-type {
+      label {
+        margin-right: 0;
+      }
+    }
+
+    label {
+      padding-top: 0;
+    }
+  }
+
+  .responsive-table {
+    table {
+      td {
+        img {
+          max-width: 60px;
+        }
+      }
+    }
+
+    @media (max-width: 830px) {
+      @include stacked-table;
+    }
+  }
+
+  .cart {
+    .availability {
+      margin: 0;
+    }
+  }
+
+  #shipping-info {
+    display: none;
+  }
+}

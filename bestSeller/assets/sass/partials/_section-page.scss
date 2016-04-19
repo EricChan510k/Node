@@ -1,0 +1,74 @@
+/* New Arrivals, Deep Discounts, Signed Books, etc. Styles */
+
+.section-page {
+
+  .content {
+    background: $stripped-background;
+  }
+
+  .featured-book {
+    background: #999;
+    color: white;
+
+    .padding-wrapper {
+      max-width: 950px;
+      margin: 0 auto;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    h3 {
+      background: black;
+      display: inline-block;
+      padding: 10px;
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    p {
+      letter-spacing: 0;
+    }
+
+    a {
+      color: white;
+    }
+
+    .author {
+      font-size: 13px;
+    }
+
+    .pub-info {
+      font-style: italic;
+      letter-spacing: 0;
+    }
+
+    .thumb {
+      float: left;
+      margin-bottom: 20px;
+      cursor: pointer;
+      width: 30%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .desc-info {
+      float: left;
+      width: 70%;
+      padding-left: 30px;
+    }
+
+    @media (max-width: 480px) {
+      .thumb, .desc-info {
+        float: none;
+        width: auto;
+        padding-left: 0;
+        max-width: none;
+      }
+    }
+  }
+}

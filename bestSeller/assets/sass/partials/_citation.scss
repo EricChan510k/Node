@@ -1,0 +1,230 @@
+/* Citation Styles */
+
+.citation {
+
+  .slider {
+    display: none;
+    margin-bottom: 0 !important;
+    height: 100%;
+
+    .slick-slide {
+      padding: 0 30px !important;
+    }
+
+    .box {
+      text-align: center;
+      height: 100%;
+      @include display-flex;
+      @include justify-content(center);
+      @include align-items(center);
+
+      img {
+        display: inline-block !important;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    button {
+      &.slick-prev,
+      &.slick-next {
+        height: 100% !important;
+        top: 0 !important;
+        width: 50% !important;
+
+        &:before {
+          content: none !important;
+        }
+      }
+
+      &.slick-prev {
+        background: url('/images/left-arrow.png') center left no-repeat;
+        left: 0 !important;
+      }
+
+      &.slick-next {
+        background: url('/images/right-arrow.png') center right no-repeat;
+        right: 0 !important;
+      }
+    }
+  }
+
+  #amazon-offer {
+    overflow: hidden;
+    position: relative;
+    min-height: 150px;
+
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -25px 0 0 -25px;
+      z-index: 10;
+    }
+  }
+
+  .content {
+    background: white;
+    font-size: 12px;
+
+    .container {
+    }
+
+    // .right-side {
+    //   float: left;
+    // }
+
+    // .left-side {
+    //   float: right;
+    // }
+
+    .pub-image {
+      display: none;
+      margin: 20px 0;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        @include box-shadow(2px 2px 5px rgba(0,0,0,.5))
+        cursor: pointer;
+      }
+    }
+
+    .book-tease {
+      display: none;
+      text-align: center;
+      cursor: pointer;
+
+      > div {
+        font-weight: bold;
+        color: $btn-order-color;
+      }
+
+      img {
+        max-width: 60%;
+      }
+    }
+
+    h1 {
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      letter-spacing: 0;
+    }
+
+    .authors {
+      text-transform: uppercase;
+    }
+
+    .pub-info {
+      font-style: italic;
+      letter-spacing: 0;
+    }
+
+    .pub-subhead {
+      font-weight: bold;
+      font-size: 13px;
+      margin-top: 20px;
+      text-transform: uppercase;
+    }
+
+    .pub-body {
+      letter-spacing: 0 !important;
+    }
+
+    .order-info {
+      margin-top: 40px;
+
+      h4 {
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+    }
+
+    .order-options {
+      .order {
+        border-top: 1px solid #ddd;
+        margin-top: 30px;
+        letter-spacing: 0;
+
+        h3 {
+          font-size: 13px;
+          font-weight: bold;
+          display: inline-block;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }
+
+        input.book-radio {
+          float: left;
+        }
+
+        .why {
+          display: inline-block;
+        }
+
+        .catalog-info {
+          margin-top: 20px;
+        }
+
+        .stock-info {
+          float: left;
+          margin-left: 10px;
+        }
+
+        .category {
+          font-weight: normal;
+          font-size: 14px;
+        }
+
+        .price {
+          font-size: 14px;
+          margin: 10px 0;
+        }
+
+        .in-stock {
+          font-weight: bold;
+          color: $btn-order-color;
+          text-transform: uppercase;
+        }
+
+        .out-of-stock {
+          font-weight: bold;
+        }
+
+        .shipping-info {
+          margin: 10px 0;
+          color: #888;
+        }
+
+        .order-form {
+        
+          @media (max-width: $sub-nav-grid-float-breakpoint-max) {
+            button {
+              margin-bottom: 5px;
+              display: block;
+              min-width: 200px;
+            }
+
+            input {
+              margin-bottom: 10px;
+              width: 150px;
+            }
+          }
+        }
+
+        .form-control {
+          width: 50px;
+          height: 32px;
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+  }
+}

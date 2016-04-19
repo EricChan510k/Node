@@ -1,0 +1,167 @@
+@import "compass";
+
+// Import the variables first that way we can use them in all other style rules
+@import "partials/variables";
+
+html, body, #page {
+  background: white;
+  height: 100%;
+}
+
+body {
+  font: normal 11px/20px 'Droid Sans', Helvetica, Arial, Sans-serif;
+  letter-spacing: 1.5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+header {
+  @include box-shadow(0 0 5px 1px rgba(0,0,0,0.3));
+}
+
+.header-placeholder {
+  background: white;
+  height: 117px;
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    height: 103px;
+  }
+
+  @media (max-width: 767px) {
+    height: 51px;
+  }
+}
+
+.content {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -100px;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 100px;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px 10px 50px 10px;
+  height: 100px;
+
+  a, span {
+    margin: 0 5px;
+    font-size: 12px;
+  }
+}
+
+label {
+  em {
+    font-weight: normal;
+  }
+}
+
+.letter-spacing-0 {
+  letter-spacing: 0;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.padding-top-20px {
+  padding-top: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.padding-wrapper {
+  padding: 10px 30px 30px 30px;
+
+  @media (max-width: 767px) {
+    @include transition(padding .3s ease .1s);
+    padding: 10px !important;
+  }
+}
+
+.content-box {
+  background: white;
+  font-size: 12px;
+  max-width: 1000px;
+  margin: 30px auto;
+  //@include box-shadow(0 0 6px rgba(0,0,0,.3));
+
+  @media (max-width: 1000px) {
+    margin: 0 auto;
+  }
+
+  .padding-wrapper {
+    padding: 30px;
+  }
+}
+
+.red {
+  color: red;
+}
+
+.indent {
+  margin-left: 30px;
+}
+
+.next-results {
+  display: none;
+  text-align: center;
+  padding: 40px 0 60px 0;
+
+  .loader {
+    display: inline-block;
+  }
+}
+
+.hide-offset {
+  position: absolute;
+  top: -100000px;
+  left: -100000px;
+}
+
+
+// Import the loader styles
+@import "partials/loader";
+@import "partials/image-loader";
+
+@import "partials/bootstrap-overrides";
+@import "partials/slick-overrides";
+@import "partials/sub-menu";
+
+@import "partials/home";
+@import "partials/masonry";
+@import "partials/section-page";
+@import "partials/text-page";
+@import "partials/bookstore";
+@import "partials/gallery";
+@import "partials/auctions";
+@import "partials/citation";
+@import "partials/publisher";
+@import "partials/artist";
+@import "partials/gift-cert";
+@import "partials/cart";
+@import "partials/place-order";
+@import "partials/payment";
+@import "partials/credit-card";
+@import "partials/confirm-order";
+@import "partials/search";
+@import "partials/account";

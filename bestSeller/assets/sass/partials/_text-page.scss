@@ -1,0 +1,22 @@
+/* Text Page Styles */
+
+.text-page {
+
+  .content {
+    background: white;
+  }
+
+  p {
+    letter-spacing: 0;
+    font-size: 12px;
+  }
+
+  #mc_embed_signup {
+    ul > li {
+      label {
+        font-weight: normal;
+        margin-left: 10px;
+      }
+    }
+  }
+}

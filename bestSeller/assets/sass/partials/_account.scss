@@ -1,0 +1,73 @@
+/* Account Styles */
+
+.account {
+  p, strong, label, td {
+    letter-spacing: 0;
+  }
+
+  .remove-card {
+    background: none;
+    border: none;
+  }
+
+  .edit-card {
+    text-decoration: none;
+  }
+}
+
+.vertical-separator {
+  height: 300px;
+  border-right: 1px solid #ccc;
+  width: 30px;
+}
+
+.extenal-services {
+  margin-top: 30px;
+
+  a {
+    display: block;
+    padding: 20px 30px;
+    @include border-radius(5px);
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+
+    i {
+      margin-right: 20px;
+    }
+  }
+
+  .facebook {
+    border: 1px solid tint($facebook-color, 50%);
+    background: tint($facebook-color, 90%);
+    color: $facebook-color;
+
+    &:hover {
+      border-color: $facebook-color;
+      background: white;
+    }
+  }
+
+  .twitter {
+    border: 1px solid tint($twitter-color, 50%);
+    background: tint($twitter-color, 90%);
+    color: $twitter-color;
+
+    &:hover {
+      border-color: $twitter-color;
+      background: white;
+    }
+  }
+
+  .instagram {
+    border: 1px solid tint($instagram-color, 50%);
+    background: tint($instagram-color, 90%);
+    color: $instagram-color;
+
+    &:hover {
+      border-color: $instagram-color;
+      background: white;
+    }
+  }
+}

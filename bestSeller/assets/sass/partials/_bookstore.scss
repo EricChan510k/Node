@@ -1,0 +1,315 @@
+/* Bookstore Styles */
+
+@import "variables";
+
+.bookstore {
+
+  .content {
+    background: $stripped-background;
+  }
+
+  .slider-365-a-day {
+    padding-top: 15px;
+    background: white;
+
+    .header {
+      text-transform: uppercase;
+      font-size: 12px;
+      padding-bottom: 15px;
+      padding-left: 40px;
+
+      a {
+        color: #444;
+        text-decoration: none;
+
+        &.red {
+          color: #800000;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        > span {
+          font-size:28px;
+        }
+      }
+
+      > span {
+        margin: 0 12px;
+      }
+    }
+
+    .slider {
+      .box {
+        cursor: pointer;
+        border: 1px solid #666;
+        padding: 30px;
+        background: #eee;
+        position: relative;
+
+       .thumb {
+          float: left;
+          margin-bottom: 20px;
+          width: 30%;
+          max-width: 200px;
+
+          img {
+            max-width: 100%;
+          }
+        }
+
+        .desc-info {
+          float: left;
+          width: 70%;
+          padding-left: 30px;
+
+          .date {
+            text-transform: uppercase;
+          }
+
+          h3 {
+            text-transform: uppercase;
+            margin: 30px 0 20px;
+            font-size: 22px;
+          }
+
+          p {
+            font-size: 12px;
+            letter-spacing: 0;
+            margin-bottom: 20px;
+          }
+        }
+
+        @media (max-width: 650px) {
+          .thumb, .desc-info {
+            float: none;
+            width: auto;
+            padding-left: 0;
+          }
+        }
+
+      }
+    }
+  }
+
+  .todays-bookshelf {
+    background: #ccc;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+
+    h3 {
+      text-align: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .bookshelf-wrapper {
+      overflow: auto;
+      
+      .bookshelf-list {
+        white-space: nowrap;
+        height: 180px;
+
+        a {
+          display: inline-block;
+          margin: 0 15px;
+        }
+
+        img {
+          height: 150px;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .loader {
+    margin: 50px auto;
+  }
+  
+  .item {
+
+    &.bestsellers,
+    &.book-of-the-week {
+      @each $screen-width, $column-width in $screen-columns {
+        @media screen and (max-width: #{$screen-width}) {
+          @if $screen-width == 480px {
+            width: ($column-width - 0.015);
+          }
+          @else {
+            width: ($column-width - 0.015) * 2; // double width for the bestsellers block
+          }
+        }
+      }
+    }
+
+    .item-inner {
+      @media (max-width: 768px) {
+        padding-bottom: 100px !important;
+      }
+
+      @media (max-width: 480px) {
+        padding-bottom: 140px !important;
+      }
+    }
+
+    &.bestsellers {
+      .item-content {
+        background: #fafafa !important;
+      }
+    }
+
+    &.book-of-the-week {
+      img {
+        max-width: 100%;
+        margin-bottom: 15px;
+      }
+
+      h4 {
+        font-size: 16px;
+        margin: 0 0 15px 0;
+      }
+
+      p {
+        letter-spacing: 0;
+      }
+
+      .item-content {
+        position: relative;
+      }
+
+      .pull-left {
+        width: 47.5%;
+        margin-right: 5%;
+      }
+
+      .pull-right {
+        width: 47.5%;
+
+        p {
+          font-size: 13px;
+        }
+      }
+
+      .author {
+        img {
+          width: 40%;
+          margin-right: 5%;
+          float: left;
+        }
+
+        p {
+          float: right;
+          width: 55%;
+        }
+      }
+
+      .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 20px;
+        background: #ebebeb;
+
+        a#how-we-choose {
+          color: #333;
+          text-decoration: none;
+        }
+
+        p.how-we-choose {
+          display: none;
+        }
+      }
+
+      .btn {
+        font-size: 12px;
+        text-transform: uppercase;
+        white-space: normal;
+      }
+    }
+
+    &.auction {
+      .time-left {
+        color: #777 !important;
+        font-size: 10px !important;
+      }
+    }
+
+    .item-content {
+      border: 1px solid #999;
+      padding:0;
+      cursor: default;
+
+      h5 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 11px;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+
+      .item-inner {
+        padding: 20px;
+      }
+
+      .header {
+        font-size: 12px;
+        background: #333;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 8px;
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+
+      .thumbs {
+        img {
+          //max-height: 200px;
+        }
+      }
+
+      .list {
+        margin-top: 20px;
+        font-size: 10px;
+        text-transform: uppercase;
+
+        > div {
+          float: left;
+          width: 49%;
+          min-height: 100px;
+          margin-bottom: 25px;
+
+          &:nth-child(odd) {
+            margin-right: 2%;
+          }
+
+          @media (max-width: 480px) {
+            width: auto;
+          }
+
+          > span {
+            
+          }
+        }
+
+        img {
+          max-height: 100%;
+          max-width: 35%;
+          float: left;
+          margin-right: 10px;
+
+          @include box-shadow(0 0 5px 1px rgba(0,0,0,.2));
+        }
+
+        a {
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    }
+  }
+}

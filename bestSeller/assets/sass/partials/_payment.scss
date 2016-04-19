@@ -1,0 +1,29 @@
+/* Payment Styles */
+
+.payment {
+
+  p, label {
+    letter-spacing: 0;
+  }
+
+  .same-as-billing {
+    display: inline-block;
+    font-size: 12px;
+    font-style: italic;
+    margin: 0;
+    margin-left: 20px;
+    height: 12px;
+
+    input {
+      margin-top: -1px !important;
+    }
+  }
+
+  .payment-information {
+    .radio {
+      label {
+        font-size: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<dataConfig>
+  <dataSource type="JdbcDataSource"
+              driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+              url="jdbc:sqlserver://ewhserver552.edgewebhosting.net:2533;database=photoeye"
+              responseBuffering="adaptive"
+              user="Dimitar"
+              password="1#Apple!Orcharda1"/>
+  <document>
+    <entity 
+        name="book"
+        pk="id"
+        query="SELECT recordid as id, 
+              isnull(catalog, '') as catalog, 
+              isnull(title2x, '') as title2x, 
+              isnull(abstract, '') as abstract, 
+              isnull(authorsx, '') as authorsx, 
+              isnull(publisherx, '') as publisherx, 
+              case when datepub = '' or datepub is null then '0' else ltrim(rtrim(datepub)) end as datepub, 
+              isnull(convert(varchar(30), soft_due, 126) + 'Z', '1970-01-01T00:00:00Z') as soft_due,
+	            isnull(convert(varchar(30), hard_due, 126) + 'Z', '1970-01-01T00:00:00Z') as hard_due 
+	            FROM inventory"
+	      deltaImportQuery="SELECT recordid as id, 
+              isnull(catalog, '') as catalog, 
+              isnull(title2x, '') as title2x, 
+              isnull(abstract, '') as abstract, 
+              isnull(authorsx, '') as authorsx, 
+              isnull(publisherx, '') as publisherx, 
+              case when datepub = '' or datepub is null then '0' else ltrim(rtrim(datepub)) end as datepub, 
+              isnull(convert(varchar(30), soft_due, 126) + 'Z', '1970-01-01T00:00:00Z') as soft_due,
+	            isnull(convert(varchar(30), hard_due, 126) + 'Z', '1970-01-01T00:00:00Z') as hard_due 
+	            FROM inventory
+	            where recordid = '{dih.delta.id}'"
+	      deltaQuery="select recordid as id from inventory where dateAdd(hh, 1, refreshCache) > '${dih.last_index_time}'"
+        >
+      <field column="id" name="id"/>
+      <field column="catalog" name="catalog" />
+      <field column="title2x" name="title2x" />
+      <field column="abstract" name="abstract" />
+      <field column="authorsx" name="authorsx" />
+      <field column="publisherx" name="publisherx" />
+      <field column="datepub" name="datepub"/>
+      <field column="soft_due" name="soft_due" default="1970-01-01T00:00:00Z"/>
+      <field column="hard_due" name="hard_due" default="1970-01-01T00:00:00Z"/>
+    </entity>
+  </document>
+</dataConfig>

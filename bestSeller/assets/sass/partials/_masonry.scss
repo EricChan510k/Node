@@ -1,0 +1,120 @@
+/* Masonry Grid Styles */
+
+@import "variables";
+
+.masonry,
+.regular-grid {
+
+  .item {
+    float: left;
+    position: relative;
+    line-height: 1.4em;
+
+    .header {
+      background: black;
+      color:white;
+      padding: 10px 20px;
+      margin: 5px;
+      @include box-shadow(1px 1px 3px rgba(0,0,0,0.3));
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 1.4em;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .item-content {
+      margin: 5px;
+      background: #fff;
+      padding: 20px;
+      cursor: pointer;
+
+      .thumbs {
+        /* 
+        .loader-wrapper {
+          height: 170px;
+          width: 100%;
+          @include display-flex;
+          @include justify-content(center);
+          @include align-items(center);
+
+          .loader {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        */
+
+        img {
+          max-width: 100%;
+          @include box-shadow(0 0 5px 1px rgba(0,0,0,0.2));
+        }
+
+        img:after {
+          clear:both;
+        }
+      }
+
+      .subline {
+        text-transform: uppercase;
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 11px !important;
+        word-wrap: break-word;
+        word-break: break-word;
+
+        > strong {
+          color: #333;
+          > a {
+            color: #333 !important;
+          }
+        }
+
+        > span, a {
+          color: #666;
+        }
+
+        > a {
+          display: block;
+          margin-top: 20px;
+          font-size: 8px !important;
+        }
+      }
+    }
+  }
+
+  // default is 5 columns
+  .grid-sizer,
+  .item {
+    width: (100 / 5) * 1%;
+  }
+
+  @each $screen-width, $column-width in $screen-columns {
+    @media screen and (max-width: #{$screen-width}) {
+      .grid-sizer,
+      .item {
+        width: $column-width - 0.015; // need to subtract 0.015 to fix Safari flexbox wrap
+      }
+    }
+  }
+}
+
+.regular-grid {
+  @include display-flex;
+  @include flex-wrap(wrap);
+
+  .item {
+    float: none !important;
+    @include display-flex;
+    padding: 5px !important;
+
+    .item-content {
+      width: 100%;
+      margin: 0 !important;
+    }
+  }
+}

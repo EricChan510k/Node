@@ -1,0 +1,25 @@
+.credit-card {
+
+  .card-type {
+    label {
+      font-weight: normal;
+      display: inline-block;
+      margin-right: 15px;
+      background: $btn-order-color;
+      color: white;
+      padding: 1px 5px;
+      @include border-radius(4px);
+      @include opacity(.5);
+
+      &.detected {
+        @include opacity(1);
+      }
+    }
+  }
+
+  .card-expiration {
+    select {
+      width: 49.3% !important;
+    }
+  }
+}

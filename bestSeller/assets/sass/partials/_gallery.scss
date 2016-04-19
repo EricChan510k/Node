@@ -1,0 +1,36 @@
+/* Gallery Styles */
+
+.gallery {
+
+  header {
+
+    .breadcrumb {
+
+      li {
+        color: #333;
+      }
+
+      > li + li:before {
+        color: #333;
+      }
+    }
+  }
+
+  .header-placeholder {
+    display: none;
+  }
+
+  .navbar-search {
+    form {
+      display: none;
+    }
+  }
+
+  .content {
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

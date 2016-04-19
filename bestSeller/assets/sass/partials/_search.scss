@@ -1,0 +1,84 @@
+/* Search Styles */
+
+.search {
+
+  .content {
+    background: $stripped-background;
+  }
+  
+  .top-info {
+    background: white;
+    padding:30px 10px;
+    text-align: center;
+
+    > span {
+      font-size: 16px;
+    }
+  }
+
+  .tab-panel {
+
+    .nav-tabs {
+      background: white;
+      padding: 0 30px;
+
+      @media (max-width: 767px) {
+        @include transition(padding .3s ease .1s);
+        padding: 0 10px;
+      }
+
+      li {
+        a {
+            padding: 15px 20px !important;
+        }
+
+        &.filter-dropdowns {
+          float: right;
+          margin-top: 14px;
+          margin-left: 20px;
+
+          @media (max-width: 920px) {
+            margin: 0;
+          }
+
+          @media (max-width: 767px) {
+            float: left;
+            margin: 0;
+          }
+          .dropdown {
+            a {
+              text-decoration: none;
+              background: none;
+              padding: 10px 15px !important;
+
+              &:hover, &:focus {
+                border: none;
+                background: none;
+              }
+
+              @media (max-width: 767px) {
+                border: none;
+              }
+            }            
+
+            @media (min-width: 767px) {
+                .dropdown-menu {
+                left: initial;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      padding: 5px 30px;
+
+      @media (max-width: 767px) {
+        @include transition(padding .3s ease .1s);
+        padding: 5px 10px;
+      }
+    }
+  }
+}

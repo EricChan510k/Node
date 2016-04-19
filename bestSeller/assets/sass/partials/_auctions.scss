@@ -1,0 +1,36 @@
+/* Auctions Styles */
+
+.auctions {
+
+  @media (max-width: $grid-float-breakpoint-max) {
+  .header-placeholder {
+    height: 103px !important;
+    }
+  }
+
+  .navbar-search {
+    form {
+      display: none;
+    }
+  }
+
+  .content {
+    text-align: center;
+
+    img {
+      margin-top: 15px;
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+
+  .enter-auction {
+    padding: 40px 10px;
+
+    a {
+      color: #777;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+}
